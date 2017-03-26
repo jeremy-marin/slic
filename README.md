@@ -18,9 +18,9 @@ Example:
 ### Obama
 
 ![Obama original](/obama.jpg?raw=true "Obama original")
-![Obama SLIC](/obama-slic-400-1.png?raw=true "Obama SLIC")
+![Obama SLIC](/obama-slic-400-1.jpg?raw=true "Obama SLIC")
 
 ### Cellules
 
 ![Cellules original](/cells.jpg?raw=true "Cellules original")
-![Cellules SLIC](/cells-slic-400-1.png?raw=true "Cellules SLIC")
+![Cellules SLIC](/cells-slic-400-1.jpg?raw=true "Cellules SLIC")
