@@ -7,7 +7,7 @@ import math
 import sys
 
 
-NBR_ITERATION = 10
+NBR_ITERATIONS = 10
 WAITING  = "-\\|//"
 
 m = 40
@@ -144,8 +144,8 @@ def initData(img, S):
 
 def computeSuperPixels(img, distances, labels, centers):
 	height, width = img.shape[:2]
-	for n in range(1, NBR_ITERATION):
-		print("\r[%s] iteration %d (%d %%)..." % (WAITING[n % 4], n, (100*n/NBR_ITERATION))),
+	for n in range(1, NBR_ITERATIONS):
+		print("\r[%s] iteration %d (%d %%)..." % (WAITING[n % 4], n, (100*n/NBR_ITERATIONS))),
 		sys.stdout.flush()
 		for i in range(len(centers)):
 			c = centers[i]
