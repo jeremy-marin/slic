@@ -7,36 +7,37 @@ WAITING  = "-\\|//"
 
 if __name__ == '__main__':
 
-	if len(sys.argv) < 3:
-		print("[!] %s <file path> <number of clusters>" % sys.argv[0])
-		print("example: %s dog.png 400" % sys.argv[0])
+	if len(sys.argv) < 2:
+		print("[!] %s <file path> [region_size]" % sys.argv[0])
+		print("example: %s dog.png 20" % sys.argv[0])
 		sys.exit(1)
 
+	region_size = 20
 	filePath = sys.argv[1]
-	nbr_superpixels = int(sys.argv[2])
+	if (len(sys.argv) >= 2):
+		region_size = int(sys.argv[2])
 
-	seeds = None
-	display_mode = 0
-	prior = 2
-	nbr_levels = 4
-	nbr_histogram_bins = 5
+	slic = None
+	ruler = 40
 
 	img = cv2.imread(filePath, 1)
 
-	converted_img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
-	height, width, channels = converted_img.shape
+	converted_img = cv2.cvtColor(img, cv2.COLOR_BGR2LAB)
 
-	seeds = cv2.ximgproc.createSuperpixelSEEDS(width, height, channels, nbr_superpixels, nbr_levels, prior, nbr_histogram_bins)
-	color_img = np.zeros((height, width, 3), np.uint8)
+	slic = cv2.ximgproc.createSuperpixelSLIC(converted_img, cv2.ximgproc.SLIC, region_size, ruler)
+	color_img = np.zeros(img.shape, np.uint8)
 	color_img[:] = (0, 0, 0)
 
 	for n in range(NBR_ITERATIONS):
 		print("\r[%s] iteration %d (%d %%)..." % (WAITING[n % 4], n, (100*n/NBR_ITERATIONS))),
 		sys.stdout.flush()
-		seeds.iterate(converted_img, NBR_ITERATIONS)
+		slic.iterate(NBR_ITERATIONS)
 	print("done!")
 
-	mask = seeds.getLabelContourMask(False)
+	print("[*] %d superpixels have been generated" % slic.getNumberOfSuperpixels())
+
+	slic.enforceLabelConnectivity()
+	mask = slic.getLabelContourMask(False)
 
 	# stitch foreground & background together
 	mask_inv = cv2.bitwise_not(mask)
@@ -46,6 +47,6 @@ if __name__ == '__main__':
 	result = cv2.add(result_bg, result_fg)
 
 	pointIndex = filePath.rfind('.')
-	filePath = filePath[:pointIndex] + "-seeds-" + str(nbr_superpixels) + filePath[pointIndex:]
+	filePath = filePath[:pointIndex] + "-slic-" + str(region_size) + filePath[pointIndex:]
 	print("[-] saving result in file %s" % filePath)
 	cv2.imwrite(filePath, result)
