@@ -35,23 +35,21 @@ Exemple :
 
 ### Chien
 
-![Chien original](/pictures/dog.png?raw=true "Chien original")
-![Chien SLIC](/pictures/dog-slic-400-1.png?raw=true "Chien SLIC")
+<img src="/pictures/dog.png?raw=true" alt="Chien original" width="50%">
+<img src="/pictures/dog-slic-400-1.png?raw=true" alt="Chien SLIC" width="50%">
 ![Chien OpenCV SEEDS](/pictures/dog-seeds-400.png?raw=true "Chien OpenCV SEEDS")
-![Chien OpenCV SLIC](/pictures/dog-slic-15.png?raw=true "Chien OpenCV SLIC")
+![Chien OpenCV SLIC](/pictures/dog-slic-14.png?raw=true "Chien OpenCV SLIC")
 
 ### Obama
 
 ![Obama original](/pictures/obama.jpg?raw=true "Obama original")
 ![Obama SLIC](/pictures/obama-slic-400-1.jpg?raw=true "Obama SLIC")
 ![Obama OpenCV SEEDS](/pictures/obama-seeds-400.jpg?raw=true "Obama OpenCV SEEDS")
-![Obama OpenCV SLIC](/pictures/obama-slic-30.jpg?raw=true "Obama OpenCV SLIC")
+![Obama OpenCV SLIC](/pictures/obama-slic-25.jpg?raw=true "Obama OpenCV SLIC")
 
 ### Cellules
 
 ![Cellules original](/pictures/cells.jpg?raw=true "Cellules original")
 ![Cellules SLIC](/pictures/cells-slic-400-1.jpg?raw=true "Cellules SLIC")
 ![Obama OpenCV SEEDS](/pictures/cells-seeds-400.jpg?raw=true "Cellules OpenCV SEEDS")
-![Obama OpenCV SLIC](/pictures/cells-slic-40.jpg?raw=true "Cellules OpenCV SLIC")
-
-<img src="/pictures/dog.png?raw=true" alt="Chien original" width="50%">
+![Obama OpenCV SLIC](/pictures/cells-slic-35.jpg?raw=true "Cellules OpenCV SLIC")
