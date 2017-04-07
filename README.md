@@ -35,8 +35,8 @@ Exemple :
 
 ### Chien
 
-<img src="/pictures/dog.png?raw=true" alt="Chien original" width="50%">
-<img src="/pictures/dog-slic-400-1.png?raw=true" alt="Chien SLIC" width="50%">
+![Chien original](/pictures/dog.png?raw=true "Chien original")
+![Chien SLIC](/pictures/dog-slic-400-1.png?raw=true "Chien SLIC")
 ![Chien OpenCV SEEDS](/pictures/dog-seeds-400.png?raw=true "Chien OpenCV SEEDS")
 ![Chien OpenCV SLIC](/pictures/dog-slic-14.png?raw=true "Chien OpenCV SLIC")
 
